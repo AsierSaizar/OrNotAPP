@@ -66,7 +66,16 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
-
+    implementation ("com.google.android.exoplayer:exoplayer:2.18.1")  // Dependencia de ExoPlayer
+    implementation ("androidx.media:media:1.6.0")  // Dependencia de MediaSession
+    implementation ("androidx.compose.ui:ui:1.0.0")
+    implementation ("androidx.compose.material3:material3:1.0.0")
     implementation(libs.androidx.ui)
     implementation(libs.androidx.material3)
-}
+
+    implementation("androidx.media:media:1.7.0") // Última versión estable
+    implementation ("androidx.compose.ui:ui:1.0.0")
+    implementation ("androidx.compose.material3:material3:1.0.0")
+    // Agrega esta línea:
+    implementation("androidx.media:media:1.6.0")
+    }
