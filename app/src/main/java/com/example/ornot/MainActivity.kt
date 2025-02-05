@@ -54,7 +54,8 @@ fun ImageTapDetector() {
 
     var finalizeJob by remember { mutableStateOf<Job?>(null) }
     val tapThreshold = 1000L // 1 segundo
-    val tapThreshold3 = 3500L // 3 segundos
+    val tapThreshold2 = 2000L // 2 segundo
+    val tapThreshold3 = 2500L // 2.5 segundos
 
     Box(
         contentAlignment = Alignment.Center,
@@ -77,7 +78,7 @@ fun ImageTapDetector() {
                                 // Inicia un temporizador de 3 segundos para esperar la segunda secuencia
                                 finalizeJob = scope.launch {
                                     delay(tapThreshold3)
-                                    // Si no hay toques en 3 segundos, finaliza la entrada
+                                    // Si no hay toques en 2.5 segundos, finaliza la entrada
                                     val finalNumber = tapCount1.coerceIn(1, maxImages)
                                     imageIndex = finalNumber
                                     tapCount1 = 0
@@ -89,8 +90,8 @@ fun ImageTapDetector() {
                             tapCount2++
                             // Reinicia el temporizador de 3 segundos para la segunda secuencia
                             finalizeJob = scope.launch {
-                                delay(tapThreshold3)
-                                // Si no hay toques en 3 segundos, finaliza la segunda secuencia
+                                delay(tapThreshold2)
+                                // Si no hay toques en 2 segundos, finaliza la segunda secuencia
                                 val finalNumber = (tapCount1 * 10 + tapCount2).coerceIn(1, maxImages)
                                 imageIndex = finalNumber
                                 tapCount1 = 0
