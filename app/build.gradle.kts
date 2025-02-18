@@ -70,6 +70,7 @@ dependencies {
     implementation ("androidx.media:media:1.6.0")  // Dependencia de MediaSession
     implementation ("androidx.compose.ui:ui:1.0.0")
     implementation ("androidx.compose.material3:material3:1.0.0")
+    implementation ("androidx.lifecycle:lifecycle-viewmodel-compose:2.6.2")
     implementation(libs.androidx.ui)
     implementation(libs.androidx.material3)
 
