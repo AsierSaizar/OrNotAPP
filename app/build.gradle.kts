@@ -55,28 +55,29 @@ dependencies {
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
     implementation(platform(libs.androidx.compose.bom))
-    implementation(libs.androidx.ui)
-    implementation(libs.androidx.ui.graphics)
-    implementation(libs.androidx.ui.tooling.preview)
-    implementation(libs.androidx.material3)
+
+    // Jetpack Compose
+    implementation("androidx.compose.ui:ui:1.5.0") // Usa la última versión estable disponible
+    implementation("androidx.compose.ui:ui-graphics")
+    implementation("androidx.compose.ui:ui-tooling-preview")
+    implementation("androidx.compose.foundation:foundation")
+    implementation("androidx.compose.material3:material3:1.2.0") // Última versión estable de Material 3
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.6.2")
+
+    // Media y reproducción de audio/video
+    implementation("com.google.android.exoplayer:exoplayer:2.18.1")  // ExoPlayer
+    implementation("androidx.media:media:1.7.0")
+    implementation(libs.androidx.media3.session)
+    implementation(libs.androidx.media3.exoplayer)  // Última versión estable de MediaSession
+
+    // Testing
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.androidx.ui.test.junit4)
+
+    // Debugging y herramientas de desarrollo
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
-    implementation ("com.google.android.exoplayer:exoplayer:2.18.1")  // Dependencia de ExoPlayer
-    implementation ("androidx.media:media:1.6.0")  // Dependencia de MediaSession
-    implementation ("androidx.compose.ui:ui:1.0.0")
-    implementation ("androidx.compose.material3:material3:1.0.0")
-    implementation ("androidx.lifecycle:lifecycle-viewmodel-compose:2.6.2")
-    implementation(libs.androidx.ui)
-    implementation(libs.androidx.material3)
-
-    implementation("androidx.media:media:1.7.0") // Última versión estable
-    implementation ("androidx.compose.ui:ui:1.0.0")
-    implementation ("androidx.compose.material3:material3:1.0.0")
-    // Agrega esta línea:
-    implementation("androidx.media:media:1.6.0")
-    }
+}
